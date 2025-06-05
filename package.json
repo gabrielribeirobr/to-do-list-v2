@@ -4,7 +4,7 @@
   "description": "A simple and accessible To-Do List application built with **HTML**, **SCSS (BEM)**, and **JavaScript**. This project emphasizes **clean code**, **SEO**, **DOM manipulation**, and **LocalStorage** to provide a responsive, user-friendly, and persistent task management experience.",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch styles/main/main.scss:styles/main/main.css",
+    "sass": "sass --watch src/scss/main.scss:src/css/main.css",
     "server": "live-server",
     "start": "npm-run-all --parallel sass server"
   },
