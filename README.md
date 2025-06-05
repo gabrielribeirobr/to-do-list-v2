@@ -26,4 +26,11 @@ A simple and accessible To-Do List application built with **HTML**, **SCSS (BEM)
    ```
 2. Open index.html in your browser.
 
-3. Start adding your tasks!
+3. Install dependencies
+   ```bash
+   npm install
+   ```
+4. Run project
+   ```bash
+   npm run start
+   ```
