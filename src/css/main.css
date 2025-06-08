@@ -1,14 +1,29 @@
+input[type=text],
+button[type=submit] {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
 body {
-  background-color: #47667b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #3d92ca;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 10%;
+  gap: 10px;
 }
 
 .container {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  background-color: #6d8b89;
+  background-color: #adadad;
   width: 70%;
+  border-radius: 4px;
 }
 
 h1 {
@@ -27,23 +42,19 @@ h1 {
 }
 
 .button {
-  background-color: #047667;
+  background-color: #3d92ca;
   border-radius: 5px;
-  border: 1px solid #d5e0b5;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
   font-family: Arial;
   font-size: 17px;
   font-weight: bold;
-  padding: 12px 10px;
+  padding: 8px 8px;
   text-decoration: none;
 }
 .button:hover {
-  background-color: #03594e;
-}
-.button:active {
-  top: 1px;
+  background-color: #3276a3;
 }
 
 /*# sourceMappingURL=main.css.map */

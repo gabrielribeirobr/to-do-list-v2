@@ -1,4 +1,15 @@
-@mixin flexCenter(){
+@mixin flexCenter() {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+@mixin resetStyleInput() {
+
+    input[type="text"],
+    button[type="submit"] {
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
 }
