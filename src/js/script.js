@@ -3,20 +3,25 @@ const taskInput = document.querySelector('.taskInput');
 const taskList = document.querySelector('.taskList'); // UL
 const btnAdd = document.querySelector('.btnAdd');
 
-let tasks = JSON.parse(localStorage.getItem("listTasks",)) || []; // recebendo valores armazenados no localstorage ou uma array
+// let tasks = JSON.parse(localStorage.getItem("listTasks",)) || []; // recebendo valores armazenados no localstorage ou uma array
 
-btnAdd.addEventListener('click', ()=>{
-    addTask();
-    setArrayLocalStorage();
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const currentTask = {
+        name: taskInput.value.toUpperCase(),
+        done: false,
+        edit: false,
+    }
+    addTask(currentTask);
 });
 
-function addTask(){
-    const atualTask = taskInput.value.toUpperCase();
-    tasks.push(atualTask); 
-    taskInput.value = "";
+function addTask(task) {
+    let tasks = getTasks();
+    tasks.push(task);
+    localStorage.setItem("listTasks", JSON.stringify(tasks));
 }
 
-function setArrayLocalStorage(){
-    const newTasks = JSON.stringify(tasks);
-    localStorage.setItem("listTasks", newTasks);
+function getTasks() {
+    return JSON.parse(localStorage.getItem("listTasks")) || [];
 }
+
