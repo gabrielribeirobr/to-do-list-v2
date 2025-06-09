@@ -38,18 +38,18 @@ h1 {
   width: 100%;
   gap: 5px;
 }
-.container .form-inputs .input {
+.container .form-inputs .taskInput {
   background-color: white;
   font-size: 14px;
   border-radius: 2px;
   padding: 8px 8px;
   width: 75%;
 }
-.container .form-inputs .input:focus {
+.container .form-inputs .taskInput:focus {
   border-radius: 8px;
   border: none;
 }
-.container .form-inputs .button {
+.container .form-inputs .btnAdd {
   background-color: #3d92ca;
   border-radius: 2px;
   display: inline-block;
@@ -61,8 +61,14 @@ h1 {
   padding: 8px 8px;
   text-decoration: none;
 }
-.container .form-inputs .button:hover {
+.container .form-inputs .btnAdd:hover {
   background-color: #3d92ca;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 50%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
