@@ -11,8 +11,11 @@ form.addEventListener('submit', (e) => {
         name: taskInput.value.toUpperCase(),
         done: false,
         edit: false,
+        id: Math.floor(Math.random() * 10000)
     }
     addTask(currentTask);
+    showTask();
+
 });
 
 function addTask(task) {
@@ -20,6 +23,36 @@ function addTask(task) {
     tasks.push(task);
     localStorage.setItem("listTasks", JSON.stringify(tasks));
 }
+
+function showTask() {
+    const tasks = getTasks();
+    taskList.innerHTML = '';
+
+    tasks.forEach((task) => {
+        const li = document.createElement('li');
+        li.className = 'liTask';
+        li.innerHTML = `<span>${task.name}</span> <button onclick="btnDelete(${task.id})">delete</button>`
+        taskList.appendChild(li);
+
+
+    }
+    )
+
+}
+
+function btnDelete(id) {
+    const tasks = getTasks();
+    const newTasks = tasks.filter((task) => task.id !== id);
+    console.log(newTasks);
+    setTasks(newTasks);
+    showTask();
+
+}
+
+function setTasks(tasks) {
+    localStorage.setItem("listTasks", JSON.stringify(tasks));
+}
+
 
 function getTasks() {
     return JSON.parse(localStorage.getItem("listTasks")) || [];
