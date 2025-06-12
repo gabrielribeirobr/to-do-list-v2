@@ -32,7 +32,7 @@ h1 {
     gap: 5px;
 
     .taskInput {
-      background-color: white;
+      background-color: $color-input;
       font-size: 14px;
       border-radius: 2px;
       padding: 8px 8px;
@@ -66,13 +66,30 @@ h1 {
     width: 100%;
     gap: 3px;
 
+    span{
+        color: white;
+    }
+
     .liTask {
       display: flex;
       align-items: center;
-      height: 32px;
+      height: 40px;
       justify-content: space-between;
       border-bottom: solid 2px;
       border-bottom-color: $secundary-dark;
+
+      .btnDelete{
+        @include flexCenter();
+        cursor: pointer;
+        background: none;
+        width: 28px;
+        height: 28px;
+        border: solid 1px;
+        border-radius: 50%;
+        border-color: $primary;
+        color: $primary;
+        font-size: 18px;
+      }
 
       &:hover {
         border-bottom-color: $primary;

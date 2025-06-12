@@ -26,7 +26,7 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #adadad;
+  background-color: #3c424a;
   width: 70%;
   border-radius: 2px;
   padding: 15px 15px;
@@ -41,7 +41,7 @@ h1 {
   gap: 5px;
 }
 .container .form-inputs .taskInput {
-  background-color: white;
+  background-color: #f1f1f1;
   font-size: 14px;
   border-radius: 2px;
   padding: 8px 8px;
@@ -70,13 +70,30 @@ h1 {
   width: 100%;
   gap: 3px;
 }
+.container .taskList span {
+  color: white;
+}
 .container .taskList .liTask {
   display: flex;
   align-items: center;
-  height: 32px;
+  height: 40px;
   justify-content: space-between;
   border-bottom: solid 2px;
-  border-bottom-color: #777676;
+  border-bottom-color: #1e1e1e;
+}
+.container .taskList .liTask .btnDelete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  width: 28px;
+  height: 28px;
+  border: solid 1px;
+  border-radius: 50%;
+  border-color: #3d92ca;
+  color: #3d92ca;
+  font-size: 18px;
 }
 .container .taskList .liTask:hover {
   border-bottom-color: #3d92ca;
