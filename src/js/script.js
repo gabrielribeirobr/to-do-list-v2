@@ -30,7 +30,7 @@ function showTask() {
   tasks.forEach((task) => {
     const li = document.createElement("li");
     li.className = "liTask";
-    li.innerHTML = `<span>${task.name}</span> <button class="btnDelete" onclick="btnDelete(${task.id})">delete</button>`;
+    li.innerHTML = `<span>${task.name}</span> <button class="btnDelete" onclick="btnDelete(${task.id})"><i class="fa-regular fa-trash-can"></i></button>`;
     taskList.appendChild(li);
   });
 }
