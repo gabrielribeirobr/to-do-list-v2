@@ -1,5 +1,5 @@
 const form = document.querySelector(".form-inputs");
-const taskInput = document.querySelector(".taskInput");
+const taskInput = document.querySelector(".input");
 const taskList = document.querySelector(".taskList"); // UL
 const btnAdd = document.querySelector(".btnAdd");
 
@@ -30,9 +30,15 @@ function showTask() {
   tasks.forEach((task) => {
     const li = document.createElement("li");
     li.className = "liTask";
-    li.innerHTML = `<span>${task.name}</span> <button class="btnDelete" onclick="btnDelete(${task.id})"><i class="fa-regular fa-trash-can"></i></button>`;
+    li.innerHTML = `<span>${task.name}</span> 
+    <button class="button" onclick="btnDelete(${task.id})"><i class="fa-regular fa-trash-can"></i></button>
+    <button class="button" onclick="btnEdit(${task.id})"><i class="fa-regular fa-pen-to-square"></i></button>`;
     taskList.appendChild(li);
   });
+}
+
+function btnEdit(){
+  // contruindo
 }
 
 function btnDelete(id) {
