@@ -21,7 +21,6 @@ h1 {
   flex-direction: column;
   background-color: $secundary;
   justify-content: flex-start;
-
   width: 70%;
   height: 300px;
   border-radius: 2px;
@@ -33,45 +32,14 @@ h1 {
     justify-content: space-between;
     width: 100%;
     gap: 5px;
-
-    .taskInput {
-      background-color: $color-input;
-      font-size: 14px;
-      border-radius: 2px;
-      padding: 8px 8px;
-      width: 100%;
-      transition: .3s ease;
-
-      &:focus {
-        border-radius: 8px;
-        border: none;
-      }
-    }
-
-    .btnAdd {
-      background-color: $primary;
-      border-radius: 2px;
-      display: inline-block;
-      cursor: pointer;
-      color: #ffffff;
-      font-family: Arial;
-      font-size: 14px;
-      font-weight: bold;
-      padding: 8px 8px;
-      text-decoration: none;
-
-      &:hover {
-        background-color: $primary-hover;
-      }
-    }
   }
 
   .taskList {
     width: 100%;
     gap: 3px;
 
-    span{
-        color: white;
+    span {
+      color: white;
     }
 
     .liTask {
@@ -82,23 +50,39 @@ h1 {
       border-bottom: solid 2px;
       border-bottom-color: $secundary-dark;
 
-      .btnDelete{
-        @include flexCenter();
-        cursor: pointer;
-        background: none;
-        width: 28px;
-        height: 28px;
-        border: solid 1px;
-        border-radius: 50%;
-        border-color: $primary;
-        color: $primary;
-        font-size: 18px;
-      }
-
       &:hover {
         border-bottom-color: $primary;
       }
     }
+  }
+}
+
+.input {
+  background-color: $color-input;
+  font-size: 14px;
+  border-radius: 2px;
+  padding: 8px 8px;
+  width: 100%;
+  transition: 0.3s ease;
+  &:focus {
+    border-radius: 8px;
+    border: none;
+  }
+}
+
+.button {
+  cursor: pointer;
+  background-color: $primary;
+  border-radius: 2px;
+  display: inline-block;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 8px;
+  text-decoration: none;
+  &:hover {
+    background-color: $primary-hover;
   }
 }
 

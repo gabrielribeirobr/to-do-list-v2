@@ -28,7 +28,6 @@ h1 {
   flex-direction: column;
   background-color: #3c424a;
   justify-content: flex-start;
-  overflow: auto;
   width: 70%;
   height: 300px;
   border-radius: 2px;
@@ -42,33 +41,6 @@ h1 {
   justify-content: space-between;
   width: 100%;
   gap: 5px;
-}
-.container .form-inputs .taskInput {
-  background-color: #f1f1f1;
-  font-size: 14px;
-  border-radius: 2px;
-  padding: 8px 8px;
-  width: 100%;
-  transition: 0.3s ease;
-}
-.container .form-inputs .taskInput:focus {
-  border-radius: 8px;
-  border: none;
-}
-.container .form-inputs .btnAdd {
-  background-color: #3d92ca;
-  border-radius: 2px;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 8px 8px;
-  text-decoration: none;
-}
-.container .form-inputs .btnAdd:hover {
-  background-color: #3276a3;
 }
 .container .taskList {
   width: 100%;
@@ -85,22 +57,37 @@ h1 {
   border-bottom: solid 2px;
   border-bottom-color: #1e1e1e;
 }
-.container .taskList .liTask .btnDelete {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  background: none;
-  width: 28px;
-  height: 28px;
-  border: solid 1px;
-  border-radius: 50%;
-  border-color: #3d92ca;
-  color: #3d92ca;
-  font-size: 18px;
-}
 .container .taskList .liTask:hover {
   border-bottom-color: #3d92ca;
+}
+
+.input {
+  background-color: #f1f1f1;
+  font-size: 14px;
+  border-radius: 2px;
+  padding: 8px 8px;
+  width: 100%;
+  transition: 0.3s ease;
+}
+.input:focus {
+  border-radius: 8px;
+  border: none;
+}
+
+.button {
+  cursor: pointer;
+  background-color: #3d92ca;
+  border-radius: 2px;
+  display: inline-block;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 8px;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: #3276a3;
 }
 
 @media (min-width: 1024px) {
