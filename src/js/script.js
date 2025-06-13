@@ -3,6 +3,7 @@ const taskInput = document.querySelector(".input");
 const taskList = document.querySelector(".taskList"); // UL
 const btnAdd = document.querySelector(".btnAdd");
 
+// showTask();
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -30,27 +31,26 @@ function showTask() {
   tasks.forEach((task) => {
     const li = document.createElement("li");
     li.className = "liTask";
-    li.innerHTML = `<span>${task.name}</span> 
-    <button class="button" onclick="btnDelete(${task.id})"><i class="fa-regular fa-trash-can"></i></button>
-    <button class="button" onclick="btnEdit(${task.id})"><i class="fa-regular fa-pen-to-square"></i></button>`;
+    li.id = task.id;
+    li.innerHTML = `<span>${task.name}</span>
+    <input type="text" class="input" name="input edit" value= "${task.name}"> 
+    <button class="button edit" onclick="btnEdit(${task.id})"><i class="fa-regular fa-pen-to-square"></i></button> 
+    <button class="button delete" onclick="btnDelete(${task.id})"><i class="fa-regular fa-trash-can"></i></button>   
+    <button class="button save" onclick="btnSave(${task.id})">salvar</button>
+    <button class="button cancel" onclick="btnCancel()">Cancelar</button>
+    `;
     taskList.appendChild(li);
   });
 }
 
-function btnEdit(id){
-  const tasks = getTasks();
-  const task = tasks.find((currentTask) => currentTask.id === id);
-  console.log(task);
-
+function btnEdit(id) {
+  const currentLi = document.getElementById(id);
+  currentLi.classList.add("editing");
 }
 
-function createEditInput(task){
-  const inputEdit = document.createElement('input');
-  inputEdit.type = 'text';
-  inputEdit.value = task.name;
-  inputEdit.classList.add('input');
-
-  return inputEdit;
+function btnSave(id) {
+  const currentLi = document.getElementById(id);
+  currentLi.classList.remove("editing");
 }
 
 function btnDelete(id) {
