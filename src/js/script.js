@@ -3,7 +3,6 @@ const taskInput = document.querySelector(".input");
 const taskList = document.querySelector(".taskList"); // UL
 const btnAdd = document.querySelector(".btnAdd");
 
-// let tasks = JSON.parse(localStorage.getItem("listTasks",)) || []; // recebendo valores armazenados no localstorage ou uma array
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -11,12 +10,13 @@ form.addEventListener("submit", (e) => {
     name: taskInput.value.toUpperCase(),
     done: false,
     edit: false,
-    id: Math.floor(Math.random() * 10000),
+    id: Math.floor(Math.random() * 10000), // get an id for current task
   };
   addTask(currentTask);
   showTask();
 });
 
+// add new tasw
 function addTask(task) {
   let tasks = getTasks();
   tasks.push(task);
@@ -37,8 +37,20 @@ function showTask() {
   });
 }
 
-function btnEdit(){
-  // contruindo
+function btnEdit(id){
+  const tasks = getTasks();
+  const task = tasks.find((currentTask) => currentTask.id === id);
+  console.log(task);
+
+}
+
+function createEditInput(task){
+  const inputEdit = document.createElement('input');
+  inputEdit.type = 'text';
+  inputEdit.value = task.name;
+  inputEdit.classList.add('input');
+
+  return inputEdit;
 }
 
 function btnDelete(id) {
