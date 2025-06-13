@@ -85,6 +85,20 @@ h1 {
     background-color: $primary-hover;
   }
 }
+.liTask:not(.editing){
+  .cancel, .save, .input{
+    display: none;
+  }
+}
+.liTask.editing {
+  span, .edit, .delete {
+    display: none;
+  }
+
+}
+
+
+
 
 @media (min-width: 1024px) {
   .container {

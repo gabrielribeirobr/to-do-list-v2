@@ -90,6 +90,14 @@ h1 {
   background-color: #3276a3;
 }
 
+.liTask:not(.editing) .cancel, .liTask:not(.editing) .save, .liTask:not(.editing) .input {
+  display: none;
+}
+
+.liTask.editing span, .liTask.editing .edit, .liTask.editing .delete {
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .container {
     width: 50%;
