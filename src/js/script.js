@@ -85,7 +85,7 @@ function btnSave(id) {
   const taskEdited = input.value.trim();
 
   const oldName = task.name;
-  const textIsValid = validationTask(taskEdited);
+  const textIsValid = validationTask(taskEdited, oldName);
   console.log("textisvalid: ", textIsValid);
 
   if (textIsValid) {
@@ -106,8 +106,8 @@ function btnDelete(id) {
   showTask();
 }
 
-function validationTask(value) {
-  if (value === "") {
+function validationTask(value, oldValue) {
+  if (value === "" || value === oldValue ) {
     return false;
   } else return true;
 }
