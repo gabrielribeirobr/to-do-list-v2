@@ -51,6 +51,12 @@ function showTask() {
   });
 }
 
+function btnDone(id){
+  const currentLi = document.getElementById(id);
+  const span = currentLi.querySelector('span');
+  span.classList.toggle('taskDone');
+}
+
 function btnCancel(id) {
   const currentLi = document.getElementById(id);
   currentLi.classList.remove("editing");
