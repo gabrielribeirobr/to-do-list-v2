@@ -45,19 +45,16 @@ function showTask() {
   });
 }
 
-function btnCancel(id){
+function btnCancel(id) {
   const currentLi = document.getElementById(id);
-  currentLi.classList.remove('editing');
+  currentLi.classList.remove("editing");
 
   // keep input edit with old value.
   const tasks = getTasks();
   const task = tasks.find((t) => t.id === id);
-
   const oldName = task.name;
-  
-  const input = currentLi.querySelector('.input');
+  const input = currentLi.querySelector(".input");
   input.value = oldName;
-  
 }
 
 function btnEdit(id) {
@@ -72,17 +69,17 @@ function btnSave(id) {
   const currentLi = document.getElementById(id);
   currentLi.classList.remove("editing");
 
-  const input = currentLi.querySelector('.input');
+  const input = currentLi.querySelector(".input");
   const taskEdited = input.value;
-  
+
   const oldName = task.name;
 
   if (taskEdited) {
     task.name = taskEdited;
     setTasks(tasks);
-    showTask();   
+    showTask();
   }
-   alert(`Você alterou: ${oldName} para: ${taskEdited}`); 
+  alert(`Você alterou: ${oldName} para: ${taskEdited}`);
 }
 
 function btnDelete(id) {
