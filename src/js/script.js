@@ -37,8 +37,8 @@ function showTask() {
     <div class="boxButtons"> 
     <button class="button edit" onclick="btnEdit(${task.id})"><i class="fa-regular fa-pen-to-square"></i></button> 
     <button class="button delete" onclick="btnDelete(${task.id})"><i class="fa-regular fa-trash-can"></i></button>   
-    <button class="button save" onclick="btnSave(${task.id})">salvar</button>
-    <button class="button cancel" onclick="btnCancel(${task.id})">Cancelar</button>
+    <button class="button save" onclick="btnSave(${task.id})"><i class="fa-regular fa-floppy-disk"></i></button>
+    <button class="button cancel" onclick="btnCancel(${task.id})"><i class="fa-regular fa-rectangle-xmark"></i></button>
     </div>
     `;
     taskList.appendChild(li);
@@ -65,12 +65,14 @@ function btnSave(id) {
   const input = currentLi.querySelector(".input--edit");
   const taskEdited = input.value;
   
+  const oldName = task.name;
+
   if (taskEdited) {
     task.name = taskEdited;
     setTasks(tasks);
-    showTask(); 
+    showTask();   
   }
-   
+   alert(`Você alterou: ${oldName} para: ${taskEdited}`); 
 }
 
 function btnDelete(id) {
