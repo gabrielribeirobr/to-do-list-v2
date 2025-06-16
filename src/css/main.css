@@ -98,6 +98,12 @@ h1 {
   display: none;
 }
 
+.boxButtons {
+  display: flex;
+  margin-left: 5px;
+  gap: 5px;
+}
+
 @media (min-width: 1024px) {
   .container {
     width: 50%;
