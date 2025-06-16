@@ -41,7 +41,7 @@ function showTask() {
     <input type="text" class="input" name="input edit" value= "${task.name}">
     <div class="boxButtons">   
     <button class="button edit" onclick="btnEdit(${task.id})"><i class="fa-regular fa-pen-to-square"></i></button>
-    <button class="button done" onclick="btnDone(${task.id})">Feito</button> 
+    <button class="button done" onclick="btnDone(${task.id})"><i class="fa-regular fa-square-check"></i></button> 
     <button class="button delete" onclick="btnDelete(${task.id})"><i class="fa-regular fa-trash-can"></i></button>   
     <button class="button save" onclick="btnSave(${task.id})"><i class="fa-regular fa-floppy-disk"></i></button>
     <button class="button cancel" onclick="btnCancel(${task.id})"><i class="fa-regular fa-rectangle-xmark"></i></button>
