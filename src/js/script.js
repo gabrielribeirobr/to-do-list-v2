@@ -3,7 +3,7 @@ const taskInput = document.querySelector(".input");
 const taskList = document.querySelector(".taskList"); // UL
 const btnAdd = document.querySelector(".btnAdd");
 
-// showTask();
+showTask();
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -32,12 +32,14 @@ function showTask() {
     const li = document.createElement("li");
     li.className = "liTask";
     li.id = task.id;
-    li.innerHTML = `<span>${task.name}</span>
-    <input type="text" class="input" name="input edit" value= "${task.name}"> 
+    li.innerHTML = `<span>${task.name}</span>  
+    <input type="text" class="input" name="input edit" value= "${task.name}">
+    <div class="boxButtons"> 
     <button class="button edit" onclick="btnEdit(${task.id})"><i class="fa-regular fa-pen-to-square"></i></button> 
     <button class="button delete" onclick="btnDelete(${task.id})"><i class="fa-regular fa-trash-can"></i></button>   
     <button class="button save" onclick="btnSave(${task.id})">salvar</button>
     <button class="button cancel" onclick="btnCancel()">Cancelar</button>
+    </div>
     `;
     taskList.appendChild(li);
   });
