@@ -8,13 +8,18 @@ showTask();
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const currentTask = {
-    name: taskInput.value.toUpperCase(),
+    name: taskInput.value.trim(),
     done: false,
-    edit: false,
     id: Math.floor(Math.random() * 10000), // get an id for current task
   };
-  addTask(currentTask);
-  showTask();
+
+  const textIsValid = validationTask(currentTask.name);
+  if (textIsValid) {
+    addTask(currentTask);
+    showTask();
+  } else {
+    alert("Nome de tarefa inválido.");
+  }
 });
 
 // add new tasw
@@ -34,8 +39,9 @@ function showTask() {
     li.id = task.id;
     li.innerHTML = `<span>${task.name}</span>  
     <input type="text" class="input" name="input edit" value= "${task.name}">
-    <div class="boxButtons"> 
-    <button class="button edit" onclick="btnEdit(${task.id})"><i class="fa-regular fa-pen-to-square"></i></button> 
+    <div class="boxButtons">   
+    <button class="button edit" onclick="btnEdit(${task.id})"><i class="fa-regular fa-pen-to-square"></i></button>
+    <button class="button done" onclick="btnDone(${task.id})">Feito</button> 
     <button class="button delete" onclick="btnDelete(${task.id})"><i class="fa-regular fa-trash-can"></i></button>   
     <button class="button save" onclick="btnSave(${task.id})"><i class="fa-regular fa-floppy-disk"></i></button>
     <button class="button cancel" onclick="btnCancel(${task.id})"><i class="fa-regular fa-rectangle-xmark"></i></button>
@@ -70,16 +76,21 @@ function btnSave(id) {
   currentLi.classList.remove("editing");
 
   const input = currentLi.querySelector(".input");
-  const taskEdited = input.value;
+  const taskEdited = input.value.trim();
 
   const oldName = task.name;
+  const textIsValid = validationTask(taskEdited);
+  console.log("textisvalid: ", textIsValid);
 
-  if (taskEdited) {
+  if (textIsValid) {
     task.name = taskEdited;
     setTasks(tasks);
     showTask();
+
+    alert(`Você alterou: ${oldName} para: ${taskEdited}`);
+  } else {
+    alert("Nome de tarefa inválido.");
   }
-  alert(`Você alterou: ${oldName} para: ${taskEdited}`);
 }
 
 function btnDelete(id) {
@@ -87,6 +98,12 @@ function btnDelete(id) {
   const newTasks = tasks.filter((task) => task.id !== id);
   setTasks(newTasks);
   showTask();
+}
+
+function validationTask(value) {
+  if (value === "") {
+    return false;
+  } else return true;
 }
 
 function setTasks(tasks) {
