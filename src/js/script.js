@@ -33,7 +33,7 @@ function showTask() {
     li.className = "liTask";
     li.id = task.id;
     li.innerHTML = `<span>${task.name}</span>  
-    <input type="text" class="input input--edit" name="input edit" value= "${task.name}">
+    <input type="text" class="input" name="input edit" value= "${task.name}">
     <div class="boxButtons"> 
     <button class="button edit" onclick="btnEdit(${task.id})"><i class="fa-regular fa-pen-to-square"></i></button> 
     <button class="button delete" onclick="btnDelete(${task.id})"><i class="fa-regular fa-trash-can"></i></button>   
@@ -48,6 +48,16 @@ function showTask() {
 function btnCancel(id){
   const currentLi = document.getElementById(id);
   currentLi.classList.remove('editing');
+
+  // keep input edit with old value.
+  const tasks = getTasks();
+  const task = tasks.find((t) => t.id === id);
+
+  const oldName = task.name;
+  
+  const input = currentLi.querySelector('.input');
+  input.value = oldName;
+  
 }
 
 function btnEdit(id) {
@@ -62,7 +72,7 @@ function btnSave(id) {
   const currentLi = document.getElementById(id);
   currentLi.classList.remove("editing");
 
-  const input = currentLi.querySelector(".input--edit");
+  const input = currentLi.querySelector('.input');
   const taskEdited = input.value;
   
   const oldName = task.name;
