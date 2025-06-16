@@ -85,26 +85,31 @@ h1 {
     background-color: $primary-hover;
   }
 }
-.liTask:not(.editing){
-  .cancel, .save, .input{
+.liTask:not(.editing) {
+  .cancel,
+  .save,
+  .input {
     display: none;
   }
 }
 .liTask.editing {
-  span, .edit, .delete {
+  span,
+  .edit,
+  .done,
+  .delete {
     display: none;
   }
-
 }
 
-.boxButtons{
+.boxButtons {
   display: flex;
   margin-left: 5px;
   gap: 5px;
 }
 
-
-
+.taskDone {
+  text-decoration: line-through;
+}
 
 @media (min-width: 1024px) {
   .container {

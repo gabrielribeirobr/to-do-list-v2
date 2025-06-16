@@ -90,11 +90,16 @@ h1 {
   background-color: #3276a3;
 }
 
-.liTask:not(.editing) .cancel, .liTask:not(.editing) .save, .liTask:not(.editing) .input {
+.liTask:not(.editing) .cancel,
+.liTask:not(.editing) .save,
+.liTask:not(.editing) .input {
   display: none;
 }
 
-.liTask.editing span, .liTask.editing .edit, .liTask.editing .delete {
+.liTask.editing span,
+.liTask.editing .edit,
+.liTask.editing .done,
+.liTask.editing .delete {
   display: none;
 }
 
@@ -102,6 +107,10 @@ h1 {
   display: flex;
   margin-left: 5px;
   gap: 5px;
+}
+
+.taskDone {
+  text-decoration: line-through;
 }
 
 @media (min-width: 1024px) {
