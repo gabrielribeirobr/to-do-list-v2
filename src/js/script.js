@@ -1,6 +1,6 @@
 const form = document.querySelector(".form-inputs");
 const taskInput = document.querySelector(".input");
-const taskList = document.querySelector(".taskList"); // UL
+const taskList = document.querySelector(".taskList"); 
 const btnAdd = document.querySelector(".btnAdd");
 
 showTask();
@@ -10,7 +10,7 @@ form.addEventListener("submit", (e) => {
   const currentTask = {
     name: taskInput.value.trim(),
     done: false,
-    id: Math.floor(Math.random() * 10000), // get an id for current task
+    id: Math.floor(Math.random() * 10000), 
   };
 
   const textIsValid = validationTask(currentTask.name);
@@ -22,7 +22,7 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-// add new tasw
+
 function addTask(task) {
   let tasks = getTasks();
   tasks.push(task);
@@ -36,7 +36,7 @@ function showTask() {
     const li = document.createElement("li");
 
     li.classList.add("liTask");
-    // verifica se a tarefa foi marcada como Done
+    
     if (task.done) {
       li.classList.add("taskDone");
     }
@@ -71,9 +71,8 @@ function btnCancel(id) {
   const currentLi = document.getElementById(id);
   currentLi.classList.remove("editing");
 
-  // keep input edit with old value.
   const tasks = getTasks();
-  const task = tasks.find((t) => t.id === id);
+  const task = tasks.find((task) => task.id === id);
   const oldName = task.name;
   const input = currentLi.querySelector(".input");
   input.value = oldName;
@@ -86,7 +85,7 @@ function btnEdit(id) {
 
 function btnSave(id) {
   const tasks = getTasks();
-  const task = tasks.find((t) => t.id === id); // finding id for currentTask
+  const task = tasks.find((task) => task.id === id);
 
   const currentLi = document.getElementById(id);
   currentLi.classList.remove("editing");
