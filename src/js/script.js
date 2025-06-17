@@ -61,7 +61,7 @@ function btnDone(id) {
   span.classList.toggle("taskDone");
 
   const tasks = getTasks();
-  const currentTask = tasks.find((t) => t.id === id);
+  const currentTask = tasks.find((task) => task.id === id);
   currentTask.done = true;
   setTasks(tasks);
   console.log("currentask: ", currentTask);
