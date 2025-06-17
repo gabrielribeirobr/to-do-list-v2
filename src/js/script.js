@@ -32,10 +32,14 @@ function addTask(task) {
 function showTask() {
   const tasks = getTasks();
   taskList.innerHTML = "";
-
   tasks.forEach((task) => {
     const li = document.createElement("li");
-    li.className = "liTask";
+
+    li.classList.add("liTask");
+    // verifica se a tarefa foi marcada como Done
+    if (task.done) {
+      li.classList.add("taskDone");
+    }
     li.id = task.id;
     li.innerHTML = `<span>${task.name}</span>  
     <input type="text" class="input" name="input edit" value= "${task.name}">
@@ -51,10 +55,16 @@ function showTask() {
   });
 }
 
-function btnDone(id){
+function btnDone(id) {
   const currentLi = document.getElementById(id);
-  const span = currentLi.querySelector('span');
-  span.classList.toggle('taskDone');
+  const span = currentLi.querySelector("span");
+  span.classList.toggle("taskDone");
+
+  const tasks = getTasks();
+  const currentTask = tasks.find((t) => t.id === id);
+  currentTask.done = true;
+  setTasks(tasks);
+  console.log("currentask: ", currentTask);
 }
 
 function btnCancel(id) {
@@ -107,7 +117,7 @@ function btnDelete(id) {
 }
 
 function validationTask(value, oldValue) {
-  if (value === "" || value === oldValue ) {
+  if (value === "" || value === oldValue) {
     return false;
   } else return true;
 }
